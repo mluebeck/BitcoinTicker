@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8C410FF72C93945500DFAEA9 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C410FF62C93945500DFAEA9 /* main.swift */; };
+		8C410FF72C93945500DFAEA9 /* BitcoinDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C410FF62C93945500DFAEA9 /* BitcoinDataLoader.swift */; };
 		8C4110042C93954200DFAEA9 /* BitcoinTickerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4110032C93954200DFAEA9 /* BitcoinTickerTest.swift */; };
-		8C41100A2C94358200DFAEA9 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C410FF62C93945500DFAEA9 /* main.swift */; };
+		8C41100A2C94358200DFAEA9 /* BitcoinDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C410FF62C93945500DFAEA9 /* BitcoinDataLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -26,7 +26,7 @@
 
 /* Begin PBXFileReference section */
 		8C410FF32C93945500DFAEA9 /* BitcoinTicker */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = BitcoinTicker; sourceTree = BUILT_PRODUCTS_DIR; };
-		8C410FF62C93945500DFAEA9 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		8C410FF62C93945500DFAEA9 /* BitcoinDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitcoinDataLoader.swift; sourceTree = "<group>"; };
 		8C4110012C93954200DFAEA9 /* BitcoinTickerTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BitcoinTickerTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C4110032C93954200DFAEA9 /* BitcoinTickerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitcoinTickerTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -70,7 +70,7 @@
 		8C410FF52C93945500DFAEA9 /* BitcoinTicker */ = {
 			isa = PBXGroup;
 			children = (
-				8C410FF62C93945500DFAEA9 /* main.swift */,
+				8C410FF62C93945500DFAEA9 /* BitcoinDataLoader.swift */,
 			);
 			path = BitcoinTicker;
 			sourceTree = "<group>";
@@ -172,7 +172,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C410FF72C93945500DFAEA9 /* main.swift in Sources */,
+				8C410FF72C93945500DFAEA9 /* BitcoinDataLoader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -180,7 +180,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C41100A2C94358200DFAEA9 /* main.swift in Sources */,
+				8C41100A2C94358200DFAEA9 /* BitcoinDataLoader.swift in Sources */,
 				8C4110042C93954200DFAEA9 /* BitcoinTickerTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
