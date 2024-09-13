@@ -15,21 +15,29 @@ class BitcoinDataLoader {
 }
 
 class HTTPClient {
-    static let shared = HTTPClient()
-    private init() {}
+    static var shared = HTTPClient()
     var requestedURL : URL?
+    func get(from url:URL) {}
+}
+
+class HTTPClientSpy : HTTPClient {
+    override func get(from url:URL) {
+        requestedURL = url
+    }
 }
 
 final class BitcoinTickerTest: XCTestCase {
 
     func test_init_doesNotRequestDataFromURL() throws {
-        let client = HTTPClient.shared
+        let client = HTTPClientSpy()
+        HTTPClient.shared = client
         _ = BitcoinDataLoader()
         XCTAssertNil(client.requestedURL)
     }
     
     func test_load_requestDataFromURL() {
-        let client = HTTPClient.shared
+        let client = HTTPClientSpy()
+        HTTPClient.shared = client
         let sut = BitcoinDataLoader()
         sut.load()
         XCTAssertNotNil(client.requestedURL)
