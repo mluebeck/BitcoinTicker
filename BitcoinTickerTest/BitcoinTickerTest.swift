@@ -8,18 +8,30 @@
 import XCTest
 import BitcoinTicker
 
+class BitcoinDataLoader {
+    func load() {
+        HTTPClient.shared.requestedURL = URL(string:"https://a-url.com")
+    }
+}
+
+class HTTPClient {
+    static let shared = HTTPClient()
+    private init() {}
+    var requestedURL : URL?
+}
 
 final class BitcoinTickerTest: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    func test_init_doesNotRequestDataFromURL() throws {
+        let client = HTTPClient.shared
+        _ = BitcoinDataLoader()
+        XCTAssertNil(client.requestedURL)
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
-        
+    
+    func test_load_requestDataFromURL() {
+        let client = HTTPClient.shared
+        let sut = BitcoinDataLoader()
+        sut.load()
+        XCTAssertNotNil(client.requestedURL)
     }
 }
