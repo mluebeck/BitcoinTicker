@@ -8,8 +8,6 @@
 import XCTest
 import BitcoinTicker
 
-
-
 final class BitcoinTickerTest: XCTestCase {
 
     func test_init_doesNotRequestDataFromURL() throws {
