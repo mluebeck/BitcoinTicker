@@ -11,15 +11,26 @@ import BitcoinTicker
 final class BitcoinTickerTest: XCTestCase {
 
     func test_init_doesNotRequestDataFromURL() throws {
-        let (_,client) = makeSUT()
-        XCTAssertNil(client.requestedURL)
+        let url = URL(string:"https://a-given-url.com")!
+        let (_,client) = makeSUT(url: url)
+        XCTAssertEqual(client.requestedURLs,[])
     }
     
     func test_load_requestDataFromURL() {
-        let (sut,client) = makeSUT()
+        let url = URL(string:"https://a-given-url.com")!
+        let (sut,client) = makeSUT(url: url)
         sut.load()
-        XCTAssertNotNil(client.requestedURL)
+        XCTAssertEqual(client.requestedURLs,[url])
     }
+    
+    func test_loadTwice_requestDataFromURLTwice() {
+        let url = URL(string:"https://a-given-url.com")!
+        let (sut,client) = makeSUT(url:url)
+        sut.load()
+        sut.load()
+        XCTAssertEqual(client.requestedURLs,[url,url])
+    }
+    
     
     private func makeSUT(url:URL = URL(string:"https://a-url.com")!) -> (sut:BitcoinDataLoader,client:HTTPClientSpy) {
         let client = HTTPClientSpy()
@@ -28,9 +39,9 @@ final class BitcoinTickerTest: XCTestCase {
     }
     
     private class HTTPClientSpy : HTTPClient {
-        var requestedURL : URL?
+        var requestedURLs = [URL]()
         func get(from url:URL) {
-            requestedURL = url
+            requestedURLs.append(url)
         }
     }
 }
