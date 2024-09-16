@@ -34,13 +34,12 @@ final class BitcoinTickerTest: XCTestCase {
     func test_load_deliversErrorOnClientError(){
         let (sut,client) = makeSUT()
         client.error = NSError(domain: "Test", code: 0)
-        var capturedError : BitcoinDataLoader.Error?
-        
+        var capturedErrors = [BitcoinDataLoader.Error]()
         sut.load {
             error in
-            capturedError = error
+            capturedErrors.append(error)
         }
-        XCTAssertEqual(capturedError,.connectivity)
+        XCTAssertEqual(capturedErrors,[.connectivity])
     }
     
     
