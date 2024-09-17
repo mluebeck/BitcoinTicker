@@ -13,6 +13,7 @@ public final class BitcoinDataLoader {
     
     public enum Error: Swift.Error {
         case connectivity
+        case invalidData
     }
     public init(url:URL,client: HTTPClient) {
         self.client = client
@@ -20,12 +21,16 @@ public final class BitcoinDataLoader {
     }
     public func load(completion:@escaping (Error) -> Void) {
         client.get(from: url) {
-            error in
-            completion(.connectivity)
+            error,response in
+            if response != nil {
+                completion(.invalidData)
+            } else {
+                completion(.connectivity)
+            }
         }
     }
 }
 
 public protocol HTTPClient {
-    func get(from url:URL, completion: @escaping (Error)->Void)
+    func get(from url:URL, completion: @escaping (Error?,HTTPURLResponse?)->Void)
 }
