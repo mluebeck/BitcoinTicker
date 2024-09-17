@@ -7,6 +7,15 @@
 
 import Foundation
  
+public enum HTTPClientResult{
+    case success(HTTPURLResponse)
+    case failure(Error)
+}
+
+public protocol HTTPClient {
+    func get(from url:URL, completion: @escaping (HTTPClientResult)->Void)
+}
+
 public final class BitcoinDataLoader {
     private let client : HTTPClient
     private let url : URL
@@ -21,16 +30,13 @@ public final class BitcoinDataLoader {
     }
     public func load(completion:@escaping (Error) -> Void) {
         client.get(from: url) {
-            error,response in
-            if response != nil {
+            response in
+            switch response {
+            case .success:
                 completion(.invalidData)
-            } else {
+            case .failure:
                 completion(.connectivity)
             }
         }
     }
-}
-
-public protocol HTTPClient {
-    func get(from url:URL, completion: @escaping (Error?,HTTPURLResponse?)->Void)
 }
