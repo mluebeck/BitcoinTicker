@@ -10,6 +10,8 @@
 		8C410FF72C93945500DFAEA9 /* BitcoinDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C410FF62C93945500DFAEA9 /* BitcoinDataLoader.swift */; };
 		8C4110042C93954200DFAEA9 /* BitcoinTickerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4110032C93954200DFAEA9 /* BitcoinTickerTest.swift */; };
 		8C41100A2C94358200DFAEA9 /* BitcoinDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C410FF62C93945500DFAEA9 /* BitcoinDataLoader.swift */; };
+		8C727C172C9AD0A300AC03B5 /* BitcoinItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C727C162C9AD0A300AC03B5 /* BitcoinItem.swift */; };
+		8C727C182C9AD6C800AC03B5 /* BitcoinItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C727C162C9AD0A300AC03B5 /* BitcoinItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,6 +31,7 @@
 		8C410FF62C93945500DFAEA9 /* BitcoinDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitcoinDataLoader.swift; sourceTree = "<group>"; };
 		8C4110012C93954200DFAEA9 /* BitcoinTickerTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BitcoinTickerTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C4110032C93954200DFAEA9 /* BitcoinTickerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitcoinTickerTest.swift; sourceTree = "<group>"; };
+		8C727C162C9AD0A300AC03B5 /* BitcoinItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitcoinItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				8C410FF62C93945500DFAEA9 /* BitcoinDataLoader.swift */,
+				8C727C162C9AD0A300AC03B5 /* BitcoinItem.swift */,
 			);
 			path = BitcoinTicker;
 			sourceTree = "<group>";
@@ -173,6 +177,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C410FF72C93945500DFAEA9 /* BitcoinDataLoader.swift in Sources */,
+				8C727C172C9AD0A300AC03B5 /* BitcoinItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -182,6 +187,7 @@
 			files = (
 				8C41100A2C94358200DFAEA9 /* BitcoinDataLoader.swift in Sources */,
 				8C4110042C93954200DFAEA9 /* BitcoinTickerTest.swift in Sources */,
+				8C727C182C9AD6C800AC03B5 /* BitcoinItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

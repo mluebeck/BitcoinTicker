@@ -68,12 +68,12 @@ final class BitcoinTickerTest: XCTestCase {
     
     private func expect(_ sut:BitcoinDataLoader, toCompleteWithError error: BitcoinDataLoader.Error, when action: () -> Void, file:StaticString = #filePath, line: UInt = #line)
     {
-        var capturedErrors = [BitcoinDataLoader.Error]()
+        var capturedResults = [BitcoinDataLoader.Result]()
         sut.load {
-            capturedErrors.append($0)
+            capturedResults.append($0)
         }
         action()
-        XCTAssertEqual(capturedErrors,[error],file:file,line:line)
+        XCTAssertEqual(capturedResults,[.failure(error)],file:file,line:line)
     }
     
     private class HTTPClientSpy : HTTPClient {
